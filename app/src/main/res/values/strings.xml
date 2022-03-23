@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyNote</string>
+    <string name="hello_this_is_a_note_one">Hello this is a note.</string>
+    <string name="hello_this_is_a_note_two">Hello this is a note..</string>
+    <string name="hello_this_is_a_note_three">Hello this is a note...</string>
+    <string name="hello_this_is_a_note_four">Hello this is a note.....</string>
+    <string name="save">SAVE</string>
+    <string name="textview">TextView</string>
+</resources>
