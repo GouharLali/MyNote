@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.example.mynote.databinding.ActivityMainBinding
+import com.fueled.reclaim.ItemsViewAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
     private var clicked = false
 
+    private val itemsAdapter = ItemsViewAdapter()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +35,24 @@ class MainActivity : AppCompatActivity() {
             onAddButtonClicked()
         }
         binding.editButton.setOnClickListener {
-            val intent = Intent(this, Note::class.java)
+            val intent = Intent(this, AddNoteActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Edit Button CLicked", Toast.LENGTH_SHORT).show()
         }
 
+        binding.notesList.apply {
+            adapter = itemsAdapter
+        }
+
+        itemsAdapter.addItemsList(NotesStore.getNote().map{NoteAdapterItem(it)})
+
+        NotesStore.addNotesUpdateListener{ notes ->
+            itemsAdapter.replaceItems ( notes.map {
+                NoteAdapterItem(
+                    it
+                )
+            })
+        }
     }
 
     private fun onAddButtonClicked() {
