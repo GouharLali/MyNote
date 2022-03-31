@@ -16,5 +16,7 @@ Basic note pad.
 - Android
 - View Binding
 - Animation
+- Jitpack
+
 
 
