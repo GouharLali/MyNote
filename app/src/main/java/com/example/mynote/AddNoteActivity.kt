@@ -1,6 +1,6 @@
 package com.example.mynote
 
- import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mynote.databinding.ActivityNoteBinding
 
@@ -11,6 +11,7 @@ class AddNoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNoteBinding.inflate(layoutInflater)
+
         val view = binding.root
         setContentView(view)
 
