@@ -17,6 +17,7 @@ Basic note pad.
 - View Binding
 - Animation
 - Jitpack
+- RecyclerView
 
 
 
